@@ -1,0 +1,16 @@
+#########################################################################
+# Title:         Cloudbox: Kernel Role                                  #
+# Author(s):     l3uddz, desimaniac                                     #
+# URL:           https://github.com/cloudbox/cloudbox                   #
+# --                                                                    #
+#         Part of the Cloudbox project: https://cloudbox.works          #
+#########################################################################
+#                   GNU General Public License v3.0                     #
+#########################################################################
+---
+- name: Kernel cron task
+  include_tasks: "cron.yml"
+
+- name: Kernel updater task
+  include_tasks: "updater.yml"
+  when: not continuous_integration
